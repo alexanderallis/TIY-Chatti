@@ -10,6 +10,7 @@ function getCurrTemp(city, st)
   });//end temp json call
 }//end getCurrTemp
 
+//when the user enters "@forecast city, st." we'll call this function
 function get3DayForecast(city, st)
 {
   $.getJSON("http://api.wunderground.com/api/bb16e63b66cd1f09/forecast/q/" + st + "/" + city +".json", function(forecastData){
@@ -42,6 +43,7 @@ function get3DayForecast(city, st)
   })//end forecast json call
 }//end get3DayForecast
 
+//when the user enters "@gif topic" we'll call this function
 function getGif(topic)
 {
   $.ajax(
@@ -59,12 +61,13 @@ function getGif(topic)
     $("#test").append("<img src='" + data1[0].source.url + "'>");
   });//end done
 }//end getgif
-
+//if the user enters "@es sentence" or "@fr sentence" we call the translate function.
+//also "@ja", "@pt", "@de"
 
 
 
 //the below code works. it pops the output into #test. but we can put it anywhere.
-//translate("fr", "cheese omlette");
+translate("german", "i must regain my honor");
 //getGif("snape");
 //getCurrTemp("Durham", "NC");
 //get3DayForecast("Durham", "nc");
