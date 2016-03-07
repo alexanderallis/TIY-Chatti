@@ -8,10 +8,11 @@ if (event.keyCode == 13)
 {
   userInput = $("textarea").val();
   post(true, userInput);
+  $("textarea").val("");
 }//end enter if
 });//end keydown event
 
-function post(me, message)//me === a boolean true is me false is not me.
+function post(me, message)//me === a boolean true is me, false is not me.
 {
   if(me)
   {
@@ -19,6 +20,94 @@ function post(me, message)//me === a boolean true is me false is not me.
   }//end if
 
 }//end post
+
+function getDateTime()//this function parses the current time into a human readable format.
+{
+  var day = new Date;//gets the day of the week in a number 0-6
+  day = day.getDay();
+  var month = new Date;
+  month = month.getMonth();//gets the month in a number 0-11
+  switch(month)//changes the month number into a word
+  {
+    case 0:
+      month = "January";
+      break;
+    case 1:
+      month = "Feburary";
+      break;
+    case 2:
+      month = "March";
+      break;
+    case 3:
+      month = "April";
+      break;
+    case 4:
+      month = "May";
+      break;
+    case 5:
+      month = "June";
+      break;
+    case 6:
+      month = "July";
+      break;
+    case 7:
+      month = "August";
+      break;
+    case 8:
+      month = "September";
+      break;
+    case 9:
+      month = "October";
+      break;
+    case 10:
+      month = "November";
+      break;
+    default:
+      month = "December";
+      break;
+  }//end swtich
+  switch(day)//changes the day number into a word.
+  {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+      break;
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    default:
+      day = "Saturday";
+  }//end swtich
+  var numDate = new Date;
+  numDate = numDate.getDate();//pulls just the date of the month out of the new date
+  var year = new Date;
+  year = year.getFullYear();//pulls the year out
+  var hour = new Date;
+  hour = hour.getHours();//pulls the hours out
+  var minutes = new Date;
+  minutes = minutes.getMinutes();// pulls the minutes out.
+
+  var ampm; //is it am or pm?
+  if(hour>12)
+  {
+    hour = hour-12;
+    ampm = "pm";
+  }
+  else{ampm ="am";}
+
+  return (hour + ":" + minutes + ampm + " on " + day + ", the " + numDate + "th of " + month + " " + year);
+}
 
 //when the user enters ""@temp city, st." we'll call this function.
 function getCurrTemp(city, st)
