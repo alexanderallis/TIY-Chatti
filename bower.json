@@ -1,0 +1,18 @@
+{
+  "name": "TIY-Chatti",
+  "homepage": "https://github.com/alexanderallis/TIY-Chatti",
+  "authors": [
+    "bestmattever"
+  ],
+  "description": "A very chatti web app.",
+  "main": "chatti.html",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
