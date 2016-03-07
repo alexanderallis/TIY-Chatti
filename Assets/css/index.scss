@@ -60,7 +60,6 @@ header{
     padding: 1em 0em;
 
     .box-header{
-      border:none red thin;
       border-bottom:solid lightgrey 3px;
       padding-bottom:1.2em;
       padding-left:1em;
@@ -76,6 +75,8 @@ header{
         font-size:4em;
         font-weight: bolder;
         padding-bottom:.2em;
+        border:solid red thin;
+
       }
       h4{
         display: inline-block;
