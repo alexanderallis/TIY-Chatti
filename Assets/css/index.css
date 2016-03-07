@@ -1,0 +1,93 @@
+body {
+  background-color: #efefef;
+  font-family: "Helvetica", Arial, sans-serif; }
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: #ed1c24;
+  color: white;
+  font-size: 4em;
+  padding: .7em .5em; }
+  header .user-info {
+    display: inline-block; }
+    header .user-info h1 {
+      font-size: 2.3em;
+      font-weight: 400;
+      letter-spacing: -.025em;
+      border: none white thin;
+      margin-top: -.25em; }
+    header .user-info h2 {
+      font-weight: 100;
+      font-style: italic;
+      letter-spacing: -.05em;
+      margin-top: -.2em; }
+  header img {
+    float: right;
+    width: 22%; }
+
+.container {
+  border: none grey thin;
+  position: absolute;
+  top: 15em;
+  bottom: 25em;
+  width: 100%;
+  overflow: scroll;
+  text-align: center;
+  padding-top: 3em;
+  padding-bottom: 3em; }
+  .container .box {
+    width: 90%;
+    margin: 0 auto;
+    border: solid grey thin;
+    background-color: white;
+    border-radius: 7px;
+    text-align: left;
+    padding: 1em 0em; }
+    .container .box .box-header {
+      border: none red thin;
+      border-bottom: solid lightgrey 3px;
+      padding-bottom: 1.2em;
+      padding-left: 1em;
+      width: 90%;
+      margin: 0 auto; }
+    .container .box .box-user {
+      display: inline-block; }
+      .container .box .box-user h3 {
+        color: #ed1c24;
+        font-size: 4em;
+        font-weight: bolder;
+        padding-bottom: .2em; }
+      .container .box .box-user h4 {
+        color: lightgrey;
+        font-size: 3em;
+        font-weight: 100; }
+    .container .box .time {
+      color: lightgrey;
+      font-size: 3em;
+      font-weight: 100;
+      float: right;
+      padding-top: .2em; }
+    .container .box .text-content {
+      padding-top: .75em;
+      padding-left: 1em;
+      padding-bottom: .5em;
+      color: black;
+      font-size: 3em; }
+
+.input-section {
+  position: fixed;
+  bottom: 0;
+  height: 22em;
+  width: 100%;
+  text-align: center;
+  padding-top: 3.5em;
+  background-color: #ed1c24; }
+  .input-section textarea {
+    width: 90%;
+    height: 22.5em;
+    border-radius: 7px;
+    border: none; }
+
+/*# sourceMappingURL=index.css.map */
