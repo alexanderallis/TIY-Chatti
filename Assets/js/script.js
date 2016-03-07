@@ -16,7 +16,7 @@ function post(me, message)//me === a boolean true is me, false is not me.
 {
   if(me)
   {
-    $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div>")
+    $("#chatArea").append("<div class='box'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>5:55pm</div></div><div class='text-content'>" + message + "</div></div>")
   }//end if
 
 }//end post

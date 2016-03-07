@@ -49,18 +49,26 @@ header{
   padding-top:3em;
   padding-bottom: 3em;
 
+  .me{
+    float:right;
+  }
+  .ai{
+    float:left;
+  }
+  
   .box{
-    width:90%;
-    margin:0 auto;
+    text-align: left;
+    width:85%;
     // height:5000px;
     border:solid grey thin;
     background-color: white;
     border-radius: 7px;
-    text-align: left;
     padding: 1em 0em;
+    margin-bottom:1.5em;
+    margin-right:2em;
+    margin-left:2em;
 
     .box-header{
-      border:none red thin;
       border-bottom:solid lightgrey 3px;
       padding-bottom:1.2em;
       padding-left:1em;
@@ -76,11 +84,14 @@ header{
         font-size:4em;
         font-weight: bolder;
         padding-bottom:.2em;
+        padding-right:.2em;
+        border:none red thin;
+
       }
       h4{
         display: inline-block;
         color:lightgrey;
-        font-size:3em;
+        font-size:3.5em;
         font-weight: 100;
       }
     }

@@ -37,16 +37,21 @@ header {
   text-align: center;
   padding-top: 3em;
   padding-bottom: 3em; }
+  .container .me {
+    float: right; }
+  .container .ai {
+    float: left; }
   .container .box {
-    width: 90%;
-    margin: 0 auto;
+    text-align: left;
+    width: 85%;
     border: solid grey thin;
     background-color: white;
     border-radius: 7px;
-    text-align: left;
-    padding: 1em 0em; }
+    padding: 1em 0em;
+    margin-bottom: 1.5em;
+    margin-right: 2em;
+    margin-left: 2em; }
     .container .box .box-header {
-      border: none red thin;
       border-bottom: solid lightgrey 3px;
       padding-bottom: 1.2em;
       padding-left: 1em;
@@ -55,13 +60,17 @@ header {
     .container .box .box-user {
       display: inline-block; }
       .container .box .box-user h3 {
+        display: inline-block;
         color: #ed1c24;
         font-size: 4em;
         font-weight: bolder;
-        padding-bottom: .2em; }
+        padding-bottom: .2em;
+        padding-right: .2em;
+        border: none red thin; }
       .container .box .box-user h4 {
+        display: inline-block;
         color: lightgrey;
-        font-size: 3em;
+        font-size: 3.5em;
         font-weight: 100; }
     .container .box .time {
       color: lightgrey;
