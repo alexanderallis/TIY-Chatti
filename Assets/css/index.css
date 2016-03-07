@@ -49,9 +49,10 @@ header {
     border-radius: 7px;
     padding: 1em 0em;
     margin-bottom: 1.5em;
-    margin-right: 2em;
-    margin-left: 2em; }
+    margin-right: 3em;
+    margin-left: 3em; }
     .container .box .box-header {
+      position: relative;
       border-bottom: solid lightgrey 3px;
       padding-bottom: 1.2em;
       padding-left: 1em;
@@ -74,7 +75,7 @@ header {
         font-weight: 100; }
     .container .box .time {
       color: lightgrey;
-      font-size: 3em;
+      font-size: 2em;
       font-weight: 100;
       float: right;
       padding-top: .2em; }
@@ -84,6 +85,28 @@ header {
       padding-bottom: .5em;
       color: black;
       font-size: 3em; }
+  .container .me .box-header:before {
+    content: "";
+    position: absolute;
+    right: -9%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 40px solid lightgrey;
+    border-bottom: 40px solid transparent;
+    border-radius: 50px; }
+  .container .me .box-header:after {
+    content: "";
+    position: absolute;
+    right: -8.5%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 40px solid white;
+    border-bottom: 40px solid transparent;
+    border-radius: 50px; }
 
 .input-section {
   position: fixed;
