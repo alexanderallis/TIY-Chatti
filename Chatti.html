@@ -11,7 +11,8 @@
 
   <header>
     <div class="user-info">
-      <h1><i class="fa fa-bolt"></i>
+      <h1>
+        <!-- <i class="fa fa-bolt"></i> -->
 bestmattever</h1>
       <h2>Matt  /</h2>
     </div>
@@ -24,7 +25,7 @@ bestmattever</h1>
 
   <div class="container" id="chatArea">
 
-    <div class="box me">
+    <!-- <div class="box me">
       <div class="box-header">
         <div class="box-user">
           <h3>
@@ -60,7 +61,7 @@ bestmattever</h1>
       <div class="text-content">
         IKR!
       </div>
-    </div>
+    </div> -->
 
 
 
@@ -88,6 +89,10 @@ bestmattever</h1>
     .blur(function() { if ($(this)[0].value == '') { $(this).css("background", "url(Assets/imgs/background_2.png) right bottom no-repeat") } })
     .blur(function() { $(this).css("background-color", "white") })
 //  https://css-tricks.com/textarea-tricks/
+  </script>
+  <script>
+  var position = $(".container").scrollHeight;
+  $(".container").scrollTop(position);
   </script>
 </body>
 
