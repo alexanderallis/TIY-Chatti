@@ -1,5 +1,4 @@
-$(function() {
-'use strict';
+
 
 var userInput;
 //userInput = $("textArea").val();
@@ -12,37 +11,75 @@ if (event.keyCode == 13)
 
   var position = $(".container").prop('scrollHeight');
   $(".container").scrollTop(position);
+  parseInput(userInput);
 }//end enter if
 });//end keydown event
 
-function post(me, message)//me === a boolean true is me, false is not me.
+function post(me, message)//me === a boolean true is me, false is not me (ie: Tom Riddle, the Dark one, he who must not be named, LORD VOLDERMORT.)
 {
   if(me)
   {
     $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>")
   }//end if
-  else//if it's not me talking... it must be chatti.
+  else if(!me)//if it's not me talking... it must be chatti.
   {
-    $("#chatArea").append("<div class='box ai'><div class='box-header'><div class='box-user'><h3>Chatti</h3><h4>Tom Riddle</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
+    $("#chatArea").append("<div class='box ai'><div class='box-header'><div class='box-user'><h3>Chatti</h3><h4>Tom R.</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
   }
 
 }//end post
 
-function parseInput()
+function parseInput(userInput)
 {
-  var inputAry =[];
-  inputAry = ($("textarea").val()).split(" "); //get each word in the user input into its own cell in an array.
+  var inputAry = userInput.split(" ");
+  //console.log(inputAry);
 
-  if(inputAry[0].substr(0,1) === "@")//if the FIRST character in the FIRST cell of the input array is @ start doing commands.
+  if(inputAry[0].substr(0,1) === "@")//if the FIRST character in the FIRST cell of the input array is @, start doing commands.
   {
+    var sentenceToTrans =" ";//used for translations.
     if(inputAry[0] === "@gif")
-    {post(false, getGif(inputAry[1]));}
+    {getGif(inputAry[1]);}//FOR SOME REASON I HAVE TO CALL POST FROM THE GETGIF FUNCTION. SCOPE!?!?!?!?! Y U DO THIS?! WHAAAYYYYYYYYY?!?!?!?!?!?!
+    else if(inputAry[0] === "@time")
+    {post(false, "It's in every message you dingus.");}
+    else if(inputAry[0] === "@temp")
+    {getCurrTemp(inputAry[1],inputAry[2]);}//just as with the gif, i have to put the post call in the getcurrtemp function. I hate this. i hates it.
+    else if(inputAry[0] === "@forecast")
+    {get3DayForecast(inputAry[1],inputAry[2]);}//same deal. ლ(ಠ益ಠლ)
+    else if(inputAry[0] === "@spanish" || inputAry[0] === "@es")
+    {
+      for(var p = 1;p<inputAry.length;p++)
+      {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
+      translate("es", sentenceToTrans);
+    }//end spanish translation
+    else if(inputAry[0] === "@french" || inputAry[0] === "@fr")
+    {
+      for(var p = 1;p<inputAry.length;p++)
+      {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
+      translate("fr", sentenceToTrans);
+    }//end spanish translation
+    else if(inputAry[0] === "@german" || inputAry[0] === "@de")
+    {
+      for(var p = 1;p<inputAry.length;p++)
+      {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
+      translate("de", sentenceToTrans);
+    }//end spanish translation
+    else if(inputAry[0] === "@portuguese" || inputAry[0] === "@pt")
+    {
+      for(var p = 1;p<inputAry.length;p++)
+      {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
+      translate("pt", sentenceToTrans);
+    }//end spanish translation
+    else if(inputAry[0] === "@japanese" || inputAry[0] === "@ja")
+    {
+      for(var p = 1;p<inputAry.length;p++)
+      {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
+      translate("ja", sentenceToTrans);
+    }//end spanish translation
   }
   else//not a command.
   {
     //we can check for other fun stuff here.
   }
-}
+}//end parse input.
 
 function getDateTime()//this function parses the current time into a human readable format.
 {
@@ -53,64 +90,64 @@ function getDateTime()//this function parses the current time into a human reada
   switch(month)//changes the month number into a word
   {
     case 0:
-      month = "January";
+      month = "Jan";
       break;
     case 1:
-      month = "Feburary";
+      month = "Feb";
       break;
     case 2:
-      month = "March";
+      month = "Mar";
       break;
     case 3:
-      month = "April";
+      month = "Apr";
       break;
     case 4:
       month = "May";
       break;
     case 5:
-      month = "June";
+      month = "Jun";
       break;
     case 6:
-      month = "July";
+      month = "Jul";
       break;
     case 7:
-      month = "August";
+      month = "Aug";
       break;
     case 8:
-      month = "September";
+      month = "Sep";
       break;
     case 9:
-      month = "October";
+      month = "Oct";
       break;
     case 10:
-      month = "November";
+      month = "Nov";
       break;
     default:
-      month = "December";
+      month = "Dec";
       break;
   }//end swtich
   switch(day)//changes the day number into a word.
   {
     case 0:
-      day = "Sunday";
+      day = "Sun.";
       break;
     case 1:
-      day = "Monday";
+      day = "Mon.";
       break;
     case 2:
-      day = "Tuesday";
+      day = "Tues.";
       break;
     case 3:
-      day = "Wednesday";
+      day = "Wed.";
       break;
     case 4:
-      day = "Thursday";
+      day = "Thu.";
       break;
     case 5:
-      day = "Friday";
+      day = "Fri.";
       break;
     default:
-      day = "Saturday";
+      day = "Sat.";
   }//end swtich
   var numDate = new Date;
   numDate = numDate.getDate();//pulls just the date of the month out of the new date
@@ -129,14 +166,14 @@ function getDateTime()//this function parses the current time into a human reada
   }
   else{ampm ="am";}
 
-  return (hour + ":" + minutes + ampm + " " + day + ", " + month + " " + numDate + "th " + year);
+  return (hour + ":" + minutes + ampm + " " + day + ", " + month + " " + numDate + " " + year);
 }
 
 //when the user enters ""@temp city, st." we'll call this function.
 function getCurrTemp(city, st)
 {
   $.getJSON("http://api.wunderground.com/api/c5a1b3a2f25bb11e/conditions/q/" + st + "/" + city + ".json", function(cityData){
-    $("#test").text("It's " + cityData.current_observation.temp_f + " ° F in " + city + ", " + st);
+    post(false, "It's " + cityData.current_observation.temp_f + "° F in " + city + ", " + st);
 
   });//end temp json call
 }//end getCurrTemp
@@ -147,30 +184,9 @@ function get3DayForecast(city, st)
   $.getJSON("http://api.wunderground.com/api/bb16e63b66cd1f09/forecast/q/" + st + "/" + city +".json", function(forecastData){
 
     //tonight
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[1].title);
-    $("#test").append("<br>");
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[1].fcttext);
-    $("#test").append("<br><br>");
-    //tomorrow
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[2].title);
-    $("#test").append("<br>");
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[2].fcttext);
-    $("#test").append("<br><br>");
-    //tomorrow night
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[3].title);
-    $("#test").append("<br>");
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[3].fcttext);
-    $("#test").append("<br><br>");
-    //day after tomorrow
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[4].title);
-    $("#test").append("<br>");
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[4].fcttext);
-    $("#test").append("<br><br>");
-    //... that night
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[5].title);
-    $("#test").append("<br>");
-    $("#test").append(forecastData.forecast.txt_forecast.forecastday[5].fcttext);
-    $("#test").append("<br><br>");
+    post(false, forecastData.forecast.txt_forecast.forecastday[1].title + "\n" + forecastData.forecast.txt_forecast.forecastday[1].fcttext);
+    post(false, forecastData.forecast.txt_forecast.forecastday[2].title + "\n" + forecastData.forecast.txt_forecast.forecastday[2].fcttext + "\n\n" + forecastData.forecast.txt_forecast.forecastday[3].title + "\n" + forecastData.forecast.txt_forecast.forecastday[3].fcttext);
+    post(false, forecastData.forecast.txt_forecast.forecastday[4].title + "\n" + forecastData.forecast.txt_forecast.forecastday[4].fcttext + "\n\n" + forecastData.forecast.txt_forecast.forecastday[5].title + "\n" + forecastData.forecast.txt_forecast.forecastday[5].fcttext);
   })//end forecast json call
 }//end get3DayForecast
 
@@ -189,19 +205,18 @@ function getGif(topic)
      }//end beforesend
    }).done(function(data1)//end ajax call
    {
-    var imgTag = ("<img src='" + data1[0].source.url + "'>");
-    return imgTag;
+    console.log("data = " +data1[0].source.url);
+    var url = data1[0].source.url;
+    console.log("url = " + url);
+    post(false, "<img src='" + url + "'>");
   });//end done
 }//end getgif
-
 
 //if the user enters "@es sentence" or "@fr sentence" we call the translate function.
 //also "@ja", "@pt", "@de"
 
-//the below code works. it pops the output into #test. but we can put it anywhere.
+//the below code works.
 //translate("german", "i must regain my honor");
 //getGif("snape");
 //getCurrTemp("Durham", "NC");
 //get3DayForecast("Durham", "nc");
-
-});//end file
