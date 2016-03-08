@@ -54,16 +54,16 @@ header {
     .container .box .box-header {
       position: relative;
       border-bottom: solid lightgrey 3px;
-      padding-bottom: 1.2em;
-      padding-left: 1em;
-      width: 90%;
+      padding-bottom: .5em;
+      padding-left: 0em;
+      width: 94%;
       margin: 0 auto; }
     .container .box .box-user {
       display: inline-block; }
       .container .box .box-user h3 {
         display: inline-block;
         color: #ed1c24;
-        font-size: 4em;
+        font-size: 3.5em;
         font-weight: bolder;
         padding-bottom: .2em;
         padding-right: .2em;
@@ -71,7 +71,7 @@ header {
       .container .box .box-user h4 {
         display: inline-block;
         color: lightgrey;
-        font-size: 3.5em;
+        font-size: 2.8em;
         font-weight: 100; }
     .container .box .time {
       color: lightgrey;
@@ -92,9 +92,9 @@ header {
     top: 0px;
     width: 0;
     height: 0;
-    border-top: 40px solid transparent;
-    border-left: 40px solid lightgrey;
-    border-bottom: 40px solid transparent;
+    border-top: 30px solid transparent;
+    border-left: 30px solid lightgrey;
+    border-bottom: 30px solid transparent;
     border-radius: 50px; }
   .container .me .box-header:after {
     content: "";
@@ -103,8 +103,30 @@ header {
     top: 0px;
     width: 0;
     height: 0;
+    border-top: 30px solid transparent;
+    border-left: 30px solid white;
+    border-bottom: 30px solid transparent;
+    border-radius: 50px; }
+  .container .ai .box-header:before {
+    content: "";
+    position: absolute;
+    right: 104%;
+    top: 0px;
+    width: 0;
+    height: 0;
     border-top: 40px solid transparent;
-    border-left: 40px solid white;
+    border-right: 40px solid lightgrey;
+    border-bottom: 40px solid transparent;
+    border-radius: 50px; }
+  .container .ai .box-header:after {
+    content: "";
+    position: absolute;
+    right: 103.5%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-right: 40px solid white;
     border-bottom: 40px solid transparent;
     border-radius: 50px; }
 
