@@ -18,8 +18,28 @@ function post(me, message)//me === a boolean true is me, false is not me.
   {
     $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>")
   }//end if
+  else//if it's not me talking... it must be chatti.
+  {
+    $("#chatArea").append("<div class='box ai'><div class='box-header'><div class='box-user'><h3>Chatti</h3><h4>Tom Riddle</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
+  }
 
 }//end post
+
+function parseInput()
+{
+  var inputAry =[];
+  inputAry = ($("textarea").val()).split(" "); //get each word in the user input into its own cell in an array.
+
+  if(inputAry[0].substr(0,1) === "@")//if the FIRST character in the FIRST cell of the input array is @ start doing commands.
+  {
+    if(inputAry[0] === "@gif")
+    {post(false, getGif(inputAry[1]));}
+  }
+  else//not a command.
+  {
+    //we can check for other fun stuff here.
+  }
+}
 
 function getDateTime()//this function parses the current time into a human readable format.
 {
@@ -166,16 +186,17 @@ function getGif(topic)
      }//end beforesend
    }).done(function(data1)//end ajax call
    {
-    $("#test").append("<img src='" + data1[0].source.url + "'>");
+    var imgTag = ("<img src='" + data1[0].source.url + "'>");
+    return imgTag;
   });//end done
 }//end getgif
+
+
 //if the user enters "@es sentence" or "@fr sentence" we call the translate function.
 //also "@ja", "@pt", "@de"
 
-
-
 //the below code works. it pops the output into #test. but we can put it anywhere.
-translate("german", "i must regain my honor");
+//translate("german", "i must regain my honor");
 //getGif("snape");
 //getCurrTemp("Durham", "NC");
 //get3DayForecast("Durham", "nc");
