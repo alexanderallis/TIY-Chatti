@@ -11,10 +11,13 @@
 
   <header>
     <div class="user-info">
-      <h1>username</h1>
-      <h2>John Doe /</h2>
+      <h1><i class="fa fa-bolt"></i>
+bestmattever</h1>
+      <h2>Matt  /</h2>
     </div>
-    <img src="Assets/imgs/logo_white.png" alt="chatti logo" />
+    <div class="logo">
+      <img src="Assets/imgs/logo_5.png" alt="chatti logo" />
+    </div>
   </header>
 
 <div id="test"></div>
@@ -25,7 +28,7 @@
       <div class="box-header">
         <div class="box-user">
           <h3>
-            you
+            <i class="fa fa-bolt"></i> you
           </h3>
           <h4>
             john doe
@@ -64,14 +67,28 @@
   </div>
 
 <div class="input-section">
-    <textarea>
-    </textarea>
+    <textarea></textarea>
+    <button class="button">
+        CHAT
+    </button>
 </div>
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="Assets/js/script.js"></script>
   <script src="Assets/js/translate.js"></script>
+  <!-- <script src="Assets/js/textBox.js"></script> -->
+
+  <script>
+  $('textarea')
+    .focus(function() { $(this).css("background", "none") })
+    .focus(function() { $(this).css("background-color", "white") })
+    // .keyup(function() { if ($(this)[0].value == '') { $(this).css("background", "url(Assets/imgs/background_2.png) right bottom no-repeat") } })
+    // .keyup(function() { if ($(this)[0].value == '') { $(this).css("background-color", "white") })
+    .blur(function() { if ($(this)[0].value == '') { $(this).css("background", "url(Assets/imgs/background_2.png) right bottom no-repeat") } })
+    .blur(function() { $(this).css("background-color", "white") })
+//  https://css-tricks.com/textarea-tricks/
+  </script>
 </body>
 
 
