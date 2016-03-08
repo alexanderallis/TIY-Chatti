@@ -109,7 +109,7 @@ function getDateTime()//this function parses the current time into a human reada
   }
   else{ampm ="am";}
 
-  return (hour + ":" + minutes + ampm + " on " + day + ", the " + numDate + "th of " + month + " " + year);
+  return (hour + ":" + minutes + ampm + " " + day + ", " + month + " " + numDate + "th " + year);
 }
 
 //when the user enters ""@temp city, st." we'll call this function.
