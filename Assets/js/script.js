@@ -9,6 +9,9 @@ if (event.keyCode == 13)
   userInput = $("textarea").val();
   post(true, userInput);
   $("textarea").val("");
+
+  var position = $(".container").prop('scrollHeight');
+  $(".container").scrollTop(position);
 }//end enter if
 });//end keydown event
 

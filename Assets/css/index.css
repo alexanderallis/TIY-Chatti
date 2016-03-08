@@ -13,9 +13,8 @@ header {
   header .user-info {
     display: inline-block;
     width: 65%;
-    border: none white thin;
-    padding-top: .7em;
-    background-color: #ed1c24; }
+    border: none grey thin;
+    padding-top: .7em; }
     header .user-info h1 {
       font-size: 1.4em;
       font-weight: 400;
@@ -69,8 +68,7 @@ header {
     margin-left: 3em; }
     .container .box .box-header {
       position: relative;
-      border-bottom: none lightgrey 3px;
-      background-color: #8a9094;
+      border-bottom: solid lightgrey 3px;
       padding-top: .5em;
       padding-bottom: .5em;
       padding-left: 1.5em;
@@ -80,7 +78,7 @@ header {
       display: inline-block; }
       .container .box .box-user h3 {
         display: inline-block;
-        color: white;
+        color: #ed1c24;
         font-size: 3.5em;
         font-weight: bolder;
         padding-bottom: .2em;
@@ -88,22 +86,18 @@ header {
         border: none red thin; }
       .container .box .box-user h4 {
         display: inline-block;
-        color: white;
+        color: grey;
         font-size: 3.2em;
         font-weight: 100;
         font-style: italic;
         letter-spacing: -.05em; }
     .container .box .time {
-      display: inline-block;
-      color: white;
-      width:50%;
-      text-align: right;
+      color: grey;
+      width: 50%;
       font-size: 2em;
       font-weight: 100;
       float: right;
-      padding-top: .2em;
-      border:none red thin;
-      }
+      padding-top: .2em; }
     .container .box .text-content {
       padding-top: .75em;
       padding-left: 1em;
@@ -119,19 +113,41 @@ header {
     width: 0;
     height: 0;
     border-top: 30px solid transparent;
-    border-left: 30px solid #8a9094;
+    border-left: 30px solid lightgrey;
+    border-bottom: 30px solid transparent;
+    border-radius: 50px; }
+  .container .me .box-header:after {
+    content: "";
+    position: absolute;
+    right: -2.5%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-left: 30px solid white;
     border-bottom: 30px solid transparent;
     border-radius: 50px; }
   .container .ai .box-header:before {
     content: "";
     position: absolute;
-    right: 98.5%;
-    top: -5px;
+    right: 99.5%;
+    top: 0px;
     width: 0;
     height: 0;
-    border-top: 40px solid transparent;
-    border-right: 40px solid #8a9094;
-    border-bottom: 40px solid transparent;
+    border-top: 30px solid transparent;
+    border-right: 30px solid lightgrey;
+    border-bottom: 30px solid transparent;
+    border-radius: 50px; }
+  .container .ai .box-header:after {
+    content: "";
+    position: absolute;
+    right: 99%;
+    top: 0px;
+    width: 0;
+    height: 0;
+    border-top: 30px solid transparent;
+    border-right: 30px solid white;
+    border-bottom: 30px solid transparent;
     border-radius: 50px; }
 
 .input-section {
@@ -141,32 +157,32 @@ header {
   width: 100%;
   text-align: center;
   padding-top: 1em;
-  background-color: #b6b8ba }
+  background-color: lightgrey; }
   .input-section textarea {
     background: url(../imgs/background_2.png) right bottom no-repeat;
     /* This ruins default border */
     background-color: white;
-    color: red;
     width: 98%;
     height: 5em;
-    border-radius: 7px;
+    border-radius: 10px;
     border: none;
     font-size: 3.5em;
     letter-spacing: -.05em;
     font-weight: lighter;
     font-style: italic;
     resize: none;
-    padding: .25em .5em; }
+    padding: .25em .3em; }
   .input-section .button {
-    width: 40%;
-    height: 1.7em;
-    font-size: 5em;
-    border-radius:7px;
-    background-color: #ed1c24;
-    color:white;
+    width: 97.5%;
+    height: 2.2em;
+    font-size: 4em;
+    color: white;
     font-weight: 600;
-    float:right;
-    margin-top:.2em;
-    margin-right:.2em;}
+    float: right;
+    margin-right: .2em;
+    margin-top: .2em;
+    border: none;
+    border-radius: 7px;
+    background-color: #ed1c24; }
 
 /*# sourceMappingURL=index.css.map */
