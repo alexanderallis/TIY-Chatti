@@ -1,29 +1,88 @@
 
+// var userInput;
+// //userInput = $("textArea").val();
+// $("textarea").keydown(function(event) {
+// if (event.keyCode == 13)
+// {
+//   userInput = $("textarea").val();
+//   post(true, userInput);
+//   $("textarea").val("");
+//
+//   var position = $(".container").prop('scrollHeight');
+//   $(".container").scrollTop(position);
+// }//end enter if
+// });//end keydown event
+
+//-------------VUE-TESTING--------------
 
 var userInput;
+
 //userInput = $("textArea").val();
 $("textarea").keydown(function(event) {
 if (event.keyCode == 13)
 {
+  var userInput = ""
   userInput = $("textarea").val();
-  post(true, userInput);
+  post(true,userInput);
+  parseInput(userInput);
   $("textarea").val("");
+  //
+  // //define
+  // var MyComponent = Vue.extend({
+  //   template: " <div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + userInput + "</div></div> "
+  // })
+  // // register
+  // Vue.component('my-component', MyComponent)
+  // // create a root instance
+  // new Vue({
+  //   el: '#chatArea'
+// });
+
+
+  // console.log(userInput);
+  // function postVue(){
+  //   $("#chatArea").append(" <my-component></my-component> ");
+  // }
+  // postVue();
+  // $("textarea").val("");
 
   var position = $(".container").prop('scrollHeight');
   $(".container").scrollTop(position);
-  parseInput(userInput);
 }//end enter if
 });//end keydown event
+
+//-------------VUE-TESTING--------------
+
+//-----------MORE-VUE-TESTING------------
+// var userInput = $("textarea").val();
+// if(userInput === )
+// // this is our Model
+// var exampleData = {
+//   expression: numbers
+// }
+//
+// // create a Vue instance, or, a "ViewModel"
+// // which links the View and the Model
+// var exampleVM = new Vue({
+//   el: '#example-1',
+//   data: exampleData
+// })
+
+//------------MORE-VUE-TESTING-----------
 
 function post(me, message)//me === a boolean true is me, false is not me (ie: Tom Riddle, the Dark one, he who must not be named, LORD VOLDERMORT.)
 {
   if(me)
   {
-    $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>")
+    $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
+    var position = $(".container").prop('scrollHeight');
+    $(".container").scrollTop(position);
   }//end if
   else if(!me)//if it's not me talking... it must be chatti.
   {
     $("#chatArea").append("<div class='box ai'><div class='box-header'><div class='box-user'><h3>Chatti</h3><h4>Tom R.</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
+    var position = $(".container").prop('scrollHeight');
+    $(".container").scrollTop(position);
   }
 
 }//end post
