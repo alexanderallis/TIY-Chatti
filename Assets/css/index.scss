@@ -1,5 +1,7 @@
 $redColor:#ed1c24;
 
+
+
 body{
   background-color:#efefef;
   font-family: "Helvetica", Arial, sans-serif;
@@ -18,7 +20,7 @@ header{
     width:65%;
     border:none grey thin;
     padding-top:.7em;
-    // background-color:$redColor;
+    background-color:$redColor;
 
 
     h1{
@@ -235,4 +237,73 @@ header{
     color:$redColor;
     background-color:lightgrey;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 500px) {
+    /* For tablets: */
+
+    header{
+      position: fixed;
+      top:0;
+      z-index: 1;
+      background-color:blue;
+      color:white;
+      font-size: 4em;
+      width:100%;
+
+      .user-info{
+        display: inline-block;
+        width:65%;
+        border:none grey thin;
+        padding-top:.7em;
+        background-color:blue;
+
+
+        h1{
+          font-size:1.4em;
+          font-weight: 400;
+          letter-spacing: -.025em;
+          border:none white thin;
+          margin-top:-.25em;
+          padding-left: .4em;
+        }
+
+        h2{
+          font-weight:100;
+          font-style:italic;
+          letter-spacing: -.05em;
+          margin-top:0em;
+          padding-left: .7em;
+
+        }
+      }
+      .logo{
+        float:right;
+        display:inline-block;
+        border:solid white thin;
+        width:34%;
+        background-color:white;
+        text-align: center;
+        padding-top:.45em;
+        padding-bottom:1.6em;
+      }
+      img{
+        border:none white thin;
+        display:inline-block;
+        width:80%;
+      }
+
+    }
 }

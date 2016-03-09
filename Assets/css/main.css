@@ -14,7 +14,8 @@ header {
     display: inline-block;
     width: 65%;
     border: none grey thin;
-    padding-top: .7em; }
+    padding-top: .7em;
+    background-color: #ed1c24; }
     header .user-info h1 {
       font-size: 1.4em;
       font-weight: 400;
@@ -188,59 +189,47 @@ header {
     color: #ed1c24;
     background-color: lightgrey; }
 
-@media only screen and (min-width: 600px) {
+@media (max-width: 500px) {
   /* For tablets: */
-  header .user-info {
-    padding-top: .8em; }
-    header .user-info h1 {
-      display: inline-block;
-      font-size: 1em;
-      border: none white thin;
-      margin-top: 0em; }
-    header .user-info h2 {
-      display: inline-block;
-      padding-left: 0em; }
-  header .logo {
-    padding-top: .25em;
-    padding-bottom: .25em; }
-  header img {
-    border: none red thin; }
-
-  .input-section {
+  header {
     position: fixed;
-    bottom: 0;
-    height: 24em;
-    width: 100%;
-    text-align: center;
-    padding-top: 1em;
-    background-color: lightgrey; }
-    .input-section textarea {
-      background: url(../imgs/background_2.png) right bottom no-repeat;
-      /* This ruins default border */
-      background-color: white;
-      width: 98%;
-      height: 5em;
-      border-radius: 10px;
-      border: none;
-      font-size: 3.5em;
-      letter-spacing: -.05em;
-      font-weight: lighter;
-      font-style: italic;
-      padding: .25em .3em; }
-    .input-section .button {
-      width: 97.5%;
-      height: 1.2em;
-      font-size: 4em;
-      color: white;
-      font-weight: 600;
+    top: 0;
+    z-index: 1;
+    background-color: blue;
+    color: white;
+    font-size: 4em;
+    width: 100%; }
+    header .user-info {
+      display: inline-block;
+      width: 65%;
+      border: none grey thin;
+      padding-top: .7em;
+      background-color: blue; }
+      header .user-info h1 {
+        font-size: 1.4em;
+        font-weight: 400;
+        letter-spacing: -.025em;
+        border: none white thin;
+        margin-top: -.25em;
+        padding-left: .4em; }
+      header .user-info h2 {
+        font-weight: 100;
+        font-style: italic;
+        letter-spacing: -.05em;
+        margin-top: 0em;
+        padding-left: .7em; }
+    header .logo {
       float: right;
-      margin-right: .2em;
-      margin-top: .2em;
-      border: none;
-      border-radius: 7px;
-      background-color: #ed1c24; }
-    .input-section .button:active {
-      color: #ed1c24;
-      background-color: lightgrey; } }
+      display: inline-block;
+      border: solid white thin;
+      width: 34%;
+      background-color: white;
+      text-align: center;
+      padding-top: .45em;
+      padding-bottom: 1.6em; }
+    header img {
+      border: none white thin;
+      display: inline-block;
+      width: 80%; } }
 
 /*# sourceMappingURL=main.css.map */

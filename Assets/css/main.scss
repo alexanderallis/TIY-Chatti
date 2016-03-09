@@ -1,108 +1,108 @@
 
 @import 'index';
-
-@media only screen and (min-width: 600px) {
-    /* For tablets: */
-    $redColor:#ed1c24;
-
-    header{
-      // position: fixed;
-      // top:0;
-      // z-index: 1;
-      // background-color:$redColor;
-      // color:white;
-      // font-size: 4em;
-      // width:100%;
-
-      .user-info{
-        // display: inline-block;
-        // width:65%;
-        // border:none grey thin;
-        padding-top:.8em;
-        // background-color:$redColor;
-
-
-        h1{
-          display: inline-block;
-          font-size:1em;
-          // font-weight: 400;
-          // letter-spacing: -.025em;
-          border:none white thin;
-          margin-top:0em;
-          // padding-left: .4em;
-        }
-
-        h2{
-          display:inline-block;
-          // font-weight:100;
-          // font-style:italic;
-          // letter-spacing: -.05em;
-          // margin-top:0em;
-          padding-left: 0em;
-
-        }
-      }
-      .logo{
-        // float:right;
-        // display:inline-block;
-        // border:solid white thin;
-        // width:34%;
-        // background-color:white;
-        // text-align: center;
-        padding-top:.25em;
-        padding-bottom:.25em;
-      }
-      img{
-        border:none red thin;
-        // display:inline-block;
-        // width:80%;
-      }
-
-    }
-
-
-
-
-    .input-section{
-      position: fixed;
-      bottom:0;
-      height:24em;
-      width:100%;
-      text-align: center;
-      padding-top:1em;
-      // background-color: $redColor;
-      background-color: lightgrey;
-
-      textarea{
-        background: url(../imgs/background_2.png) right bottom no-repeat; /* This ruins default border */
-        background-color:white;
-        width:98%;
-        height:5em;
-        border-radius:10px;
-        border:none;
-        font-size:3.5em;
-        letter-spacing: -.05em;
-        font-weight:lighter;
-        font-style: italic;
-        padding:.25em .3em;
-      }
-
-      .button{
-        width:97.5%;
-        height:1.2em;
-        font-size:4em;
-        color:white;
-        font-weight: 600;
-        float:right;
-        margin-right:.2em;
-        margin-top:.2em;
-        border:none;
-        border-radius:7px;
-        background-color: $redColor;
-      }
-      .button:active{
-        color:$redColor;
-        background-color:lightgrey;
-      }
-    }
-}
+//
+// @media only screen and (min-width: 600px) {
+//     /* For tablets: */
+//     $redColor:#ed1c24;
+//
+//     header{
+//       // position: fixed;
+//       // top:0;
+//       // z-index: 1;
+//       // background-color:$redColor;
+//       // color:white;
+//       // font-size: 4em;
+//       // width:100%;
+//
+//       .user-info{
+//         // display: inline-block;
+//         // width:65%;
+//         // border:none grey thin;
+//         padding-top:.8em;
+//         background-color:blue;
+// 
+//
+//         h1{
+//           display: inline-block;
+//           font-size:1em;
+//           // font-weight: 400;
+//           // letter-spacing: -.025em;
+//           border:none white thin;
+//           margin-top:0em;
+//           // padding-left: .4em;
+//         }
+//
+//         h2{
+//           display:inline-block;
+//           // font-weight:100;
+//           // font-style:italic;
+//           // letter-spacing: -.05em;
+//           // margin-top:0em;
+//           padding-left: 0em;
+//
+//         }
+//       }
+//       .logo{
+//         // float:right;
+//         // display:inline-block;
+//         // border:solid white thin;
+//         // width:34%;
+//         // background-color:white;
+//         // text-align: center;
+//         padding-top:.25em;
+//         padding-bottom:.25em;
+//       }
+//       img{
+//         border:none red thin;
+//         // display:inline-block;
+//         // width:80%;
+//       }
+//
+//     }
+//
+//
+//
+//
+//     .input-section{
+//       position: fixed;
+//       bottom:0;
+//       height:24em;
+//       width:100%;
+//       text-align: center;
+//       padding-top:1em;
+//       // background-color: $redColor;
+//       background-color: lightgrey;
+//
+//       textarea{
+//         background: url(../imgs/background_2.png) right bottom no-repeat; /* This ruins default border */
+//         background-color:white;
+//         width:98%;
+//         height:5em;
+//         border-radius:10px;
+//         border:none;
+//         font-size:3.5em;
+//         letter-spacing: -.05em;
+//         font-weight:lighter;
+//         font-style: italic;
+//         padding:.25em .3em;
+//       }
+//
+//       .button{
+//         width:97.5%;
+//         height:1.2em;
+//         font-size:4em;
+//         color:white;
+//         font-weight: 600;
+//         float:right;
+//         margin-right:.2em;
+//         margin-top:.2em;
+//         border:none;
+//         border-radius:7px;
+//         background-color: $redColor;
+//       }
+//       .button:active{
+//         color:$redColor;
+//         background-color:lightgrey;
+//       }
+//     }
+// }
