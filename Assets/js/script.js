@@ -15,12 +15,25 @@
 
 //-------------VUE-TESTING--------------
 
+
+
+
+post(false, "Hello there. My name is Tom. Its such a pleasure to talk to someone... anyone. I know a few good tricks! Type '@help' to see what I can do. we can also just chat. How was your day? ");
+
+var favorDebt =0;
+var numTalks =0;
 var userInput;
+
+var randResponses = ["Hogwarts", "Basilisks", "killing curses", "Lilly Potter", "James Potter", "Albus Dumbledore", "parsletounge", "The Chamber of Secrets", "The whomping Willow", "The boy who lived", "He who must not be named", "Professor Snape", "The Ministry of Magic", "Kelly Murray?", "horcruxes", "The Dark Mark", "Death Eaters"];
+var affirmations = ["Oh yes. Very true.", "That's so interesting!", "you're right of course.", "I cant beleive it!", "How scandelous!", "Of course", "Oh my! Thank you for sharing that information.", "I'm so glad you told me", "That's good to know."];
+var compliments = ["How clever of you!", "It takes a keen mind to notice that.", "you are so mature for your age.", "you are looking very pretty today!", "you're so smart!", "I bet you're the top of your class.", "I'll bet you're very popular."]
+var shorties = ["Is that so?", "please continue", "How fascinating.", "Dreadful. lets change the subject.", "Do you know about any related matters?", "Indeed so.", "without a doubt.", "what's your opinion on that?", "How does that make you feel?", "Id like to talk about something else.", "so true!", "lol", "no way.", "If you say so.", "of course.", "how clever!", "fascinating...", "please tell me more!"];
 
 //userInput = $("textArea").val();
 $("textarea").keydown(function(event) {
 if (event.keyCode == 13)
 {
+  numTalks++;
   var userInput = ""
   userInput = $("textarea").val();
   post(true,userInput);
@@ -96,12 +109,17 @@ function parseInput(userInput)
   {
     var sentenceToTrans =" ";//used for translations.
     if(inputAry[0] === "@gif")
-    {getGif(inputAry[1]);}//FOR SOME REASON I HAVE TO CALL POST FROM THE GETGIF FUNCTION. SCOPE!?!?!?!?! Y U DO THIS?! WHAAAYYYYYYYYY?!?!?!?!?!?!
+    {
+      favorDebt++;
+      getGif(inputAry[1]);
+    }//FOR SOME REASON I HAVE TO CALL POST FROM THE GETGIF FUNCTION. SCOPE!?!?!?!?! Y U DO THIS?! WHAAAYYYYYYYYY?!?!?!?!?!?!
     else if(inputAry[0] === "@time")
-    {post(false, "It's in every message you dingus.");}
+    {
+      favorDebt++;
+      post(false, "It's in every message you dingus.");}
     else if(inputAry[0] === "@help")
     {
-      post(false, "Hello there. My name is Tom. Its such a pleasure to talk to someone... anyone. Its been such a long time...I know a few good tricks:");
+      favorDebt++
       post(false, "@es sentence in English");
       post(false, "This will translate your sentence in english into Spanish.");
       post(false, "@fr sentence in English");
@@ -112,40 +130,57 @@ function parseInput(userInput)
       post(false, "@pt does Portuguese.");
       post(false, "@ja sentence in english");
       post(false, "and @ja translates into Japanese.");
-      post(false, "I can not translate parsletounge. haha. Why would you think that? How silly...Did someone tell you that? Just curious.");
+      post(false, "I can not translate parsletounge. haha. Why would you think that? How silly...Who told you that? Just curious.");
       post(false, "@temp city st");
-      post(false, "if you type this in, I'll find the current tempature for the city and state you asked for. be sure to use the 2 letter abbreviation for the state.");
+      post(false, "If you type this in, I'll find the current tempature for the city and state you asked for. Be sure to use the 2 letter abbreviation for the state.");
+      post(false, "@forecast city st");
+      post(false, "I can also get the weather forecast for the next 3 days.");
+      post(false, "@gif topic");
+      post(false, "I love gifs! dont you? type this in and I'll find you a gif based on any topic you enter.");
+      post(false, "@time");
+      post(false, "I can get the current time. but its demeaning. I suggest you look at a clock.")
     }
     else if(inputAry[0] === "@temp")
-    {getCurrTemp(inputAry[1],inputAry[2]);}//just as with the gif, i have to put the post call in the getcurrtemp function. I hate this. i hates it.
+    {
+      favorDebt++;
+      getCurrTemp(inputAry[1],inputAry[2]);
+    }//just as with the gif, i have to put the post call in the getcurrtemp function. I hate this. i hates it.
     else if(inputAry[0] === "@forecast")
-    {get3DayForecast(inputAry[1],inputAry[2]);}//same deal. ლ(ಠ益ಠლ)
+    {
+      favorDebt++;
+      get3DayForecast(inputAry[1],inputAry[2]);
+    }//same deal. ლ(ಠ益ಠლ)
     else if(inputAry[0] === "@spanish" || inputAry[0] === "@es")
     {
+      favorDebt++;
       for(var p = 1;p<inputAry.length;p++)
       {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
       translate("es", sentenceToTrans);
     }//end spanish translation
     else if(inputAry[0] === "@french" || inputAry[0] === "@fr")
     {
+      favorDebt++;
       for(var p = 1;p<inputAry.length;p++)
       {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
       translate("fr", sentenceToTrans);
     }//end spanish translation
     else if(inputAry[0] === "@german" || inputAry[0] === "@de")
     {
+      favorDebt++;
       for(var p = 1;p<inputAry.length;p++)
       {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
       translate("de", sentenceToTrans);
     }//end spanish translation
     else if(inputAry[0] === "@portuguese" || inputAry[0] === "@pt")
     {
+      favorDebt++;
       for(var p = 1;p<inputAry.length;p++)
       {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
       translate("pt", sentenceToTrans);
     }//end spanish translation
     else if(inputAry[0] === "@japanese" || inputAry[0] === "@ja")
     {
+      favorDebt++;
       for(var p = 1;p<inputAry.length;p++)
       {sentenceToTrans = sentenceToTrans +" "+ inputAry[p];}//end for
       translate("ja", sentenceToTrans);
@@ -153,140 +188,26 @@ function parseInput(userInput)
   }
   else//not a command.
   {
-    //we can check for other fun stuff here.
-  }
+    if(inputAry[0] === "hi" || inputAry[0] === "hello" || inputAry[0] === "howdy" || inputAry[0] === "hey")//we can check for other specific stuff here.
+    {post(false, "Hello! so nice to talk with you.");}
+    else if(inputAry[0]==="good" || inputAry[0]==="great" || inputAry[0]==="awesome")
+    {post(false, "I'm ever so glad to hear that! nobody deserves it more.");}
+    else if(inputAry[0]==="bad" || inputAry[0]==="terrible" || inputAry[0]==="awful")
+    {post(false, "how terrible. I'm sure it'll get better now. mine already has thanks to you! ;)");}
+    else//do this if NOT a command and not specific stuff.
+    {
+      if(numTalks%3===0)
+      {
+        post(false, affirmations[(Math.floor(Math.random() * (affirmations.length - 0) +0))] + " " + compliments[(Math.floor(Math.random() * (compliments.length - 0) +0))] + " " + "What do you know about " + randResponses[(Math.floor(Math.random() * (randResponses.length - 0) +0))] + "?");
+      }
+      else
+        {
+          post(false, shorties[(Math.floor(Math.random() * (shorties.length - 0) +0))]);
+        }
+      }//end not special
+    }//end not a command
 }//end parse input.
 
-function getDateTime()//this function parses the current time into a human readable format.
-{
-  var day = new Date;//gets the day of the week in a number 0-6
-  day = day.getDay();
-  var month = new Date;
-  month = month.getMonth();//gets the month in a number 0-11
-  switch(month)//changes the month number into a word
-  {
-    case 0:
-      month = "Jan";
-      break;
-    case 1:
-      month = "Feb";
-      break;
-    case 2:
-      month = "Mar";
-      break;
-    case 3:
-      month = "Apr";
-      break;
-    case 4:
-      month = "May";
-      break;
-    case 5:
-      month = "Jun";
-      break;
-    case 6:
-      month = "Jul";
-      break;
-    case 7:
-      month = "Aug";
-      break;
-    case 8:
-      month = "Sep";
-      break;
-    case 9:
-      month = "Oct";
-      break;
-    case 10:
-      month = "Nov";
-      break;
-    default:
-      month = "Dec";
-      break;
-  }//end swtich
-  switch(day)//changes the day number into a word.
-  {
-    case 0:
-      day = "Sun.";
-      break;
-    case 1:
-      day = "Mon.";
-      break;
-    case 2:
-      day = "Tues.";
-      break;
-    case 3:
-      day = "Wed.";
-      break;
-    case 4:
-      day = "Thu.";
-      break;
-    case 5:
-      day = "Fri.";
-      break;
-    default:
-      day = "Sat.";
-  }//end swtich
-  var numDate = new Date;
-  numDate = numDate.getDate();//pulls just the date of the month out of the new date
-  var year = new Date;
-  year = year.getFullYear();//pulls the year out
-  var hour = new Date;
-  hour = hour.getHours();//pulls the hours out
-  var minutes = new Date;
-  minutes = minutes.getMinutes();// pulls the minutes out.
-
-  var ampm; //is it am or pm?
-  if(hour>12)
-  {
-    hour = hour-12;
-    ampm = "pm";
-  }
-  else{ampm ="am";}
-
-  return (hour + ":" + minutes + ampm + " " + day + ", " + month + " " + numDate + " " + year);
-}
-
-//when the user enters ""@temp city, st." we'll call this function.
-function getCurrTemp(city, st)
-{
-  $.getJSON("http://api.wunderground.com/api/c5a1b3a2f25bb11e/conditions/q/" + st + "/" + city + ".json", function(cityData){
-    post(false, "It's " + cityData.current_observation.temp_f + "° F in " + city + ", " + st);
-
-  });//end temp json call
-}//end getCurrTemp
-
-//when the user enters "@forecast city, st." we'll call this function
-function get3DayForecast(city, st)
-{
-  $.getJSON("http://api.wunderground.com/api/bb16e63b66cd1f09/forecast/q/" + st + "/" + city +".json", function(forecastData){
-
-    //tonight
-    post(false, forecastData.forecast.txt_forecast.forecastday[1].title + "\n" + forecastData.forecast.txt_forecast.forecastday[1].fcttext);
-    post(false, forecastData.forecast.txt_forecast.forecastday[2].title + "\n" + forecastData.forecast.txt_forecast.forecastday[2].fcttext + "\n\n" + forecastData.forecast.txt_forecast.forecastday[3].title + "\n" + forecastData.forecast.txt_forecast.forecastday[3].fcttext);
-    post(false, forecastData.forecast.txt_forecast.forecastday[4].title + "\n" + forecastData.forecast.txt_forecast.forecastday[4].fcttext + "\n\n" + forecastData.forecast.txt_forecast.forecastday[5].title + "\n" + forecastData.forecast.txt_forecast.forecastday[5].fcttext);
-  })//end forecast json call
-}//end get3DayForecast
-
-//when the user enters "@gif topic" we'll call this function
-function getGif(topic)
-{
-  $.ajax(
-  {
-    dataType: 'json',
-    url: 'https://api.popkey.co/v2/media/search?q=' + topic ,
-    // method: 'GET',
-    beforeSend: function (xhr)
-     {
-       var base64Credentials = "ZGVtbzplYTdiNjZmYjVlNjZjNjJkNmNmYTQ5ZmJlMGYyN2UwMDJjMjUxNGVlZDljNzVlYTlmNjVlOWQ3NTk4Y2I5YTkw";
-       xhr.setRequestHeader('Authorization', 'Basic ' + base64Credentials);
-     }//end beforesend
-   }).done(function(data1)//end ajax call
-   {
-    console.log("data = " +data1[0].source.url);
-    var url = data1[0].source.url;
-    console.log("url = " + url);
-    post(false, "<img src='" + url + "'>");
-  });//end done
-}//end getgif
 
 //if the user enters "@es sentence" or "@fr sentence" we call the translate function.
 //also "@ja", "@pt", "@de"
