@@ -113,7 +113,7 @@ function post(me, message)//me === a boolean true is me, false is not me (ie: To
 {
   if(me)
   {
-    $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
+    $("#chatArea").append("<div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>Ginny W.</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + message + "</div></div>");
     var position = $(".container").prop('scrollHeight');
     $(".container").scrollTop(position);
   }//end if
@@ -138,6 +138,23 @@ function parseInput(userInput)
     {getGif(inputAry[1]);}//FOR SOME REASON I HAVE TO CALL POST FROM THE GETGIF FUNCTION. SCOPE!?!?!?!?! Y U DO THIS?! WHAAAYYYYYYYYY?!?!?!?!?!?!
     else if(inputAry[0] === "@time")
     {post(false, "It's in every message you dingus.");}
+    else if(inputAry[0] === "@help")
+    {
+      post(false, "Hello there. My name is Tom. Its such a pleasure to talk to someone... anyone. Its been such a long time...I know a few good tricks:");
+      post(false, "@es sentence in English");
+      post(false, "This will translate your sentence in english into Spanish.");
+      post(false, "@fr sentence in English");
+      post(false, "Similar to @es, @fr will translate your sentence in english into French.");
+      post(false, "@de sentence in English");
+      post(false, "This one translates your sentence into German.");
+      post(false, "@pt sentence in English");
+      post(false, "@pt does Portuguese.");
+      post(false, "@ja sentence in english");
+      post(false, "and @ja translates into Japanese.");
+      post(false, "I can not translate parsletounge. haha. Why would you think that? How silly...Did someone tell you that? Just curious.");
+      post(false, "@temp city st");
+      post(false, "if you type this in, I'll find the current tempature for the city and state you asked for. be sure to use the 2 letter abbreviation for the state.");
+    }
     else if(inputAry[0] === "@temp")
     {getCurrTemp(inputAry[1],inputAry[2]);}//just as with the gif, i have to put the post call in the getcurrtemp function. I hate this. i hates it.
     else if(inputAry[0] === "@forecast")
