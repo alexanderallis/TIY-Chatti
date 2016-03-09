@@ -231,8 +231,8 @@ header{
     border-radius:7px;
     background-color: $redColor;
   }
-  // .button:click{
-  //   color:white;
-  //   background-color:$redColor;
-  // }
+  .button:active{
+    color:white;
+    background-color:$redColor;
+  }
 }

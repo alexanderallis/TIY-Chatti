@@ -171,7 +171,6 @@ header {
     letter-spacing: -.05em;
     font-weight: lighter;
     font-style: italic;
-    resize: none;
     padding: .25em .3em; }
   .input-section .button {
     width: 97.5%;
@@ -184,6 +183,9 @@ header {
     margin-top: .2em;
     border: none;
     border-radius: 7px;
+    background-color: #ed1c24; }
+  .input-section .button:active {
+    color: white;
     background-color: #ed1c24; }
 
 /*# sourceMappingURL=index.css.map */

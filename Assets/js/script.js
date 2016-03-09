@@ -30,6 +30,7 @@ if (event.keyCode == 13)
   //define
   var MyComponent = Vue.extend({
     template: " <div class='box me'><div class='box-header'><div class='box-user'><h3>you</h3><h4>john doe</h4></div><div class='time'>" + getDateTime() + "</div></div><div class='text-content'>" + userInput + "</div></div> "
+    // template: post(me, message);
   })
   // register
   Vue.component('my-component', MyComponent)
