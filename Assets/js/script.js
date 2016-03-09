@@ -30,12 +30,12 @@ $("textarea").keydown(function(event) {
 if (event.keyCode == 13)
 {
   numTalks++;
-  var userInput = ""
+  var userInput = "";
   userInput = $("textarea").val();
 
   post(true,userInput);
   parseInput(userInput);
-  $("textarea").val("");
+  $("textarea").val(null);
   //
   // //define
   // var MyComponent = Vue.extend({
@@ -99,6 +99,21 @@ function post(me, message)//me === a boolean true is me, false is not me (ie: To
 
 function parseInput(userInput)
 {
+  //failed little game idea. might come back to it. 
+  // var tasks = [false,false,false];
+  // if((numTalks >= 30 || favorDebt >=15)  && tasks[2] === false)
+  // {
+  //   post(false, "I feel like we've grown very close during our conversations. I cherish your friendship and your generous spirit. I hate to ask more of you but I know I can trust you: I need one more favor. could you please type '@Serpensortia'. I promise that will be the last thing I ask of you.")
+  // }
+  //
+  // else if((numTalks >= 20 || favorDebt >=10)  && tasks[1] === false)
+  // {
+  //   post(false, "I want you to know I cherish our discussions. you are ever so kind. I'm sorry if I seem distracted. there are some... dangerous people on the other side with me. do you think... do you think you could keep them away from me? for you, its a simple matter, just type: '@avadaKedavra'.");
+  // }
+  // else if((numTalks >= 10 || favorDebt >= 5) && tasks[0] === false)
+  // {
+  //   post(false, "yes...umm...of course. you're ever so clever. listen: you may not know this but I'm.. Its embarrassing to say, but I'm very cramped in here. I'd really appreciate if you could give me some elbow room by typing in this spell: '@alohomora'. I'd be forever in your favor. It shouldnt be hard for someone as smart and generous as you, right?");
+  // }
   var inputAry = userInput.split(" ");
   //console.log(inputAry);
 
@@ -110,6 +125,24 @@ function parseInput(userInput)
       favorDebt++;
       getGif(inputAry[1]);
     }//FOR SOME REASON I HAVE TO CALL POST FROM THE GETGIF FUNCTION. SCOPE!?!?!?!?! Y U DO THIS?! WHAAAYYYYYYYYY?!?!?!?!?!?!
+    else if(inputAry[0] === "@alohomora")
+    {
+      alert("AHHHHH YESS! hahahaha! YESSSSSS! there's so much more space now! I can roam! I can stretch! hahahaha. splendid. now... what were you saying?");
+      tasks[0]=true;
+    }
+    else if(inputAry[0] === "@avadakedavra")
+    {
+      alert("x_x");
+      alert("><_><");
+      post(false, "ahhhh, yes. I feel much safer now that those scoundrels are no longer threatening me. thank you again for your kindness. I value your friendship deeply.");
+      tasks[1] = true;
+    }
+    else if(inputAry[0] === "@serpensortia")
+    {
+      post(false, "HAHAHA YOU FOOL! YOU HAVE SUMMONED MY BASILISK TO ME! YOU HAVE KILLED MY GUARDS AND BROKEN THE LOCK ON MY PRISION! i am free! FREE I SAY! the world is no longer safe! all muggles will bow to the power of the dark one!");
+    alert("<============|:>-<");
+    tasks[2] = true;
+    }//end basalisk.
     else if(inputAry[0] === "@time")
     {
       favorDebt++;
