@@ -185,7 +185,7 @@ header {
     border-radius: 7px;
     background-color: #ed1c24; }
   .input-section .button:active {
-    color: white;
-    background-color: #ed1c24; }
+    color: #ed1c24;
+    background-color: lightgrey; }
 
 /*# sourceMappingURL=index.css.map */
