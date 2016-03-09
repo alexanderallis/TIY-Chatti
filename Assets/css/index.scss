@@ -232,7 +232,7 @@ header{
     background-color: $redColor;
   }
   .button:active{
-    color:white;
-    background-color:$redColor;
+    color:$redColor;
+    background-color:white;
   }
 }
